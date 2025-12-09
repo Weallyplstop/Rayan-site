@@ -42,6 +42,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0 10px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
     .brand {
       display: flex;
@@ -68,6 +70,53 @@
       border-radius: 999px;
       font-size: 13px;
       border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .nav-links a {
+      color: #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 10px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #0b1221;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      min-width: 220px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      z-index: 10;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 14px;
+      color: #e2e8f0;
+    }
+    .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
     .hero {
       padding: 30px 0 60px;
@@ -258,6 +307,21 @@
             <div>Rayan Automatic Driving School</div>
             <small style="color:#e2e8f0;">RDS · Coventry</small>
           </div>
+        </div>
+        <div class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <div class="dropdown">
+            <a href="courses.html" aria-haspopup="true">Courses ▾</a>
+            <div class="dropdown-menu" aria-label="Courses submenu">
+              <a href="courses.html#automatic">Automatic driving lessons</a>
+              <a href="courses.html#motorway">Motorway driving lessons</a>
+              <a href="courses.html#refresher">Refresher driving lessons</a>
+              <a href="courses.html#new-drivers">New & inexperienced drivers</a>
+            </div>
+          </div>
+          <a href="gallery.html">Gallery</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="contact.html">Contact us</a>
         </div>
         <div class="pill">Automatic only · 5+ years experience · 100+ passes</div>
       </nav>
