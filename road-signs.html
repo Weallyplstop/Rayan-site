@@ -86,20 +86,16 @@
       border: 1px solid #e5e7eb;
       box-shadow: var(--shadow);
     }
-    .sign-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
+    .sign-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      object-fit: contain;
       margin-bottom: 10px;
-      color: #fff;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 6px;
     }
-    .warning .sign-icon { background: linear-gradient(135deg, #ea580c, #facc15); }
-    .regulatory .sign-icon { background: linear-gradient(135deg, #ef4444, #f87171); }
-    .info .sign-icon { background: linear-gradient(135deg, #2563eb, #38bdf8); }
     .sign-card h3 { margin: 0 0 6px; font-size: 18px; }
     .sign-card p { margin: 0; color: var(--muted); font-size: 14px; }
     footer { padding: 30px 0; text-align: center; color: var(--muted); font-size: 14px; }
@@ -154,27 +150,27 @@
         </div>
         <div class="sign-grid">
           <article class="sign-card warning">
-            <div class="sign-icon">⚠️</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/UK_traffic_sign_512.svg/120px-UK_traffic_sign_512.svg.png" alt="General danger warning sign" loading="lazy" />
             <h3>General danger</h3>
             <p>Extra caution required—look for supplementary plates describing the hazard.</p>
           </article>
           <article class="sign-card warning">
-            <div class="sign-icon">🔁</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UK_traffic_sign_520.svg/120px-UK_traffic_sign_520.svg.png" alt="Roundabout ahead warning sign" loading="lazy" />
             <h3>Roundabout ahead</h3>
             <p>Prepare for lane positioning, give way to the right, and time your mirrors-signal-manoeuvre routine.</p>
           </article>
           <article class="sign-card warning">
-            <div class="sign-icon">🦌</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/UK_traffic_sign_551.svg/120px-UK_traffic_sign_551.svg.png" alt="Deer crossing warning sign" loading="lazy" />
             <h3>Wild animals</h3>
             <p>Reduce speed and scan verges—common on rural Warwickshire routes.</p>
           </article>
           <article class="sign-card warning">
-            <div class="sign-icon">⬇️</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/UK_traffic_sign_523.1.svg/120px-UK_traffic_sign_523.1.svg.png" alt="Steep hill descent sign" loading="lazy" />
             <h3>Steep hill</h3>
             <p>Use engine braking for manuals and adjust speed early to avoid overheating brakes.</p>
           </article>
           <article class="sign-card warning">
-            <div class="sign-icon">🚸</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/UK_traffic_sign_545.svg/120px-UK_traffic_sign_545.svg.png" alt="School crossing warning sign" loading="lazy" />
             <h3>School crossing</h3>
             <p>Expect children near the carriageway. Check mirrors and be ready to stop.</p>
           </article>
@@ -190,27 +186,27 @@
         </div>
         <div class="sign-grid">
           <article class="sign-card regulatory">
-            <div class="sign-icon">🚫</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/UK_traffic_sign_616.svg/120px-UK_traffic_sign_616.svg.png" alt="No entry sign" loading="lazy" />
             <h3>No entry</h3>
             <p>Do not proceed past this point. Often placed at one-way exits.</p>
           </article>
           <article class="sign-card regulatory">
-            <div class="sign-icon">⛔</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/UK_traffic_sign_617.svg/120px-UK_traffic_sign_617.svg.png" alt="No vehicles sign" loading="lazy" />
             <h3>No vehicles</h3>
             <p>Road closed to all motor vehicles. Watch for alternative route signage.</p>
           </article>
           <article class="sign-card regulatory">
-            <div class="sign-icon">↗️</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/UK_traffic_sign_609.svg/120px-UK_traffic_sign_609.svg.png" alt="Turn right ahead mandatory sign" loading="lazy" />
             <h3>Turn right ahead</h3>
             <p>Blue mandatory arrow instructs you to follow the indicated direction.</p>
           </article>
           <article class="sign-card regulatory">
-            <div class="sign-icon">30</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/UK_traffic_sign_670.svg/120px-UK_traffic_sign_670.svg.png" alt="30 mph speed limit sign" loading="lazy" />
             <h3>Speed limit</h3>
             <p>Red circle with numerals indicates maximum mph. Remember default 30mph in lit areas.</p>
           </article>
           <article class="sign-card regulatory">
-            <div class="sign-icon">🚗💨</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/UK_traffic_sign_953.svg/120px-UK_traffic_sign_953.svg.png" alt="Bus lane sign" loading="lazy" />
             <h3>Bus lane / tram gate</h3>
             <p>Blue rectangles specify when only buses, cycles, or trams may use a lane. Check the times on the plate.</p>
           </article>
@@ -226,27 +222,27 @@
         </div>
         <div class="sign-grid">
           <article class="sign-card info">
-            <div class="sign-icon">🛣️</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/UK_traffic_sign_291.svg/200px-UK_traffic_sign_291.svg.png" alt="Motorway direction sign" loading="lazy" />
             <h3>Motorway direction</h3>
             <p>Blue background with white text. Watch for lane arrows and junction numbers near the top.</p>
           </article>
           <article class="sign-card info">
-            <div class="sign-icon">🟩</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/UK_traffic_sign_260.svg/200px-UK_traffic_sign_260.svg.png" alt="Primary route direction sign" loading="lazy" />
             <h3>Primary route</h3>
             <p>Green panels point towards major A-roads—important for satnav-free planning.</p>
           </article>
           <article class="sign-card info">
-            <div class="sign-icon">ℹ️</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/UK_traffic_sign_2302.svg/120px-UK_traffic_sign_2302.svg.png" alt="Tourist information sign" loading="lazy" />
             <h3>Service / information</h3>
             <p>White background for local destinations, car parks, hospitals, and tourist attractions.</p>
           </article>
           <article class="sign-card info">
-            <div class="sign-icon">🅿️</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/UK_traffic_sign_801.svg/120px-UK_traffic_sign_801.svg.png" alt="Parking sign" loading="lazy" />
             <h3>Parking panels</h3>
             <p>Blue background indicates permitted parking. Check additional plates for time limits.</p>
           </article>
           <article class="sign-card info">
-            <div class="sign-icon">🚧</div>
+            <img class="sign-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/UK_traffic_sign_7001.svg/120px-UK_traffic_sign_7001.svg.png" alt="Road works information sign" loading="lazy" />
             <h3>Road works</h3>
             <p>Amber or black-on-yellow signs provide lane closures, temporary speed limits, and convoy instructions.</p>
           </article>

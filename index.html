@@ -187,7 +187,21 @@
       border: 1px solid rgba(224, 242, 255, 0.5);
     }
     .btn:hover { transform: translateY(-1px); }
-    .hero-img { display: none; }
+    .hero-img {
+      display: block;
+      background: rgba(15, 23, 42, 0.35);
+      border-radius: 20px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 45px rgba(15, 23, 42, 0.35);
+    }
+    .hero-img img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      height: 100%;
+      min-height: 280px;
+    }
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -246,6 +260,20 @@
     }
     .card h3 { margin: 0 0 8px; }
     .card p { margin: 0; color: var(--muted); }
+    .about-photos {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .about-photos img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      height: 180px;
+      border: 1px solid #e5e7eb;
+      box-shadow: var(--shadow);
+    }
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -495,7 +523,7 @@
       <div class="hero">
         <div>
           <h1>Automatic & manual driving confidence with RDS</h1>
-          <p>Dual-transmission coaching for confident everyday driving—serving Coventry, Bedworth, Nuneaton, Warwick, and Leamington from a central CV15GX base.</p>
+          <p>Automatic or manual coaching for confident everyday driving—serving Coventry, Bedworth, Nuneaton, Warwick, and Leamington from a central CV15GX base.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/447882398131?text=Hi%20Rayan%20Driving%20School%2C%20I%27d%20like%20to%20book%20automatic%20or%20manual%20lessons" target="_blank" rel="noopener">Book on WhatsApp</a>
             <a class="btn btn-secondary" href="mailto:rayandrive@yahoo.com">Email rayandrive@yahoo.com</a>
@@ -506,6 +534,9 @@
             <div class="stat"><strong>98%</strong><span>First‑time pass rate</span></div>
           </div>
           <div class="address-chip">Address · CV15GX · City-centre meet point</div>
+        </div>
+        <div class="hero-img">
+          <img src="assets/Rayan2.jpg" alt="RDS automatic and manual lesson car" />
         </div>
       </div>
     </div>
@@ -528,7 +559,7 @@
     <div class="container">
       <div class="section-title">
         <h2>Why Rayan Automatic & Manual Driving School</h2>
-        <p>Dual-transmission specialists sharpening everyday driving confidence across Midlands routes.</p>
+        <p>Automatic and manual specialists sharpening everyday driving confidence across Midlands routes.</p>
       </div>
       <div class="cards">
         <div class="card">
@@ -543,6 +574,11 @@
           <h3>Local expertise</h3>
           <p>Coventry routes, mock tests, and DVSA standards to get you test-ready in auto or manual.</p>
         </div>
+      </div>
+      <div class="about-photos">
+        <img src="assets/Rayan3.jpg" alt="Automatic lesson in progress" />
+        <img src="assets/Rayan4.jpg" alt="Manual learner celebrating pass" />
+        <img src="assets/Rayan5.jpg" alt="Driving instructor supporting learner" />
       </div>
     </div>
   </section>
