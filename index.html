@@ -257,7 +257,7 @@
     .price { font-size: 24px; font-weight: 700; margin: 0 0 6px; color: var(--red); }
     .price-note { margin: 0; color: var(--muted); font-size: 14px; }
     .cta-stack { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .google-rating-chip {
+    .google-rating-chip, .trustindex-wrapper {
       display: flex;
       align-items: center;
       gap: 12px;
@@ -284,6 +284,10 @@
     .google-rating-chip strong { display: block; font-size: 20px; }
     .google-rating-chip span { display: block; font-size: 13px; color: var(--muted); }
     .google-rating-chip .stars { margin-left: auto; font-size: 18px; }
+    .trustindex-wrapper {
+      justify-content: center;
+      padding: 10px;
+    }
     .google-reviews {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -554,75 +558,10 @@
         <h2>Google reviews · Coventry</h2>
         <p>What Rayan Automatic & Driving School learners say.</p>
       </div>
-      <div class="google-rating-chip" role="img" aria-label="4.9 out of 5 on Google">
-        <div class="google-g">G</div>
-        <div>
-          <strong>4.9 / 5</strong>
-          <span>Based on Coventry Google reviews</span>
-        </div>
-        <div class="stars" aria-hidden="true">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
+      <div class="trustindex-wrapper">
+        <div class="ti-widget" data-ti-widget-id="eccf1aa60e60010495963c36b79"></div>
       </div>
-      <div class="google-reviews">
-        <article class="google-card">
-          <div class="google-header">
-            <div class="avatar" aria-hidden="true">SA</div>
-            <div>
-              <strong>Sarah A.</strong>
-              <div class="google-meta">Local Guide · Coventry</div>
-            </div>
-            <span class="google-badge">Google</span>
-          </div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <h3>“Passed first time!”</h3>
-          <p>Rayan was patient, clear, and knew all the Coventry routes. Highly recommend for automatic learners.</p>
-          <div class="review-footer">
-            <small>Reviewed Oct 2024</small>
-            <span class="verified">Verified learner</span>
-          </div>
-        </article>
-        <article class="google-card">
-          <div class="google-header">
-            <div class="avatar" aria-hidden="true">DP</div>
-            <div>
-              <strong>Dan P.</strong>
-              <div class="google-meta">Intensive course · Coventry</div>
-            </div>
-            <span class="google-badge">Google</span>
-          </div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <h3>“Great intensive course”</h3>
-          <p>Booked an intensive week, smashed the test. Calm coaching, no hidden fees, flexible slots.</p>
-          <div class="review-footer">
-            <small>Reviewed Sep 2024</small>
-            <span class="verified">Verified program</span>
-          </div>
-        </article>
-        <article class="google-card">
-          <div class="google-header">
-            <div class="avatar" aria-hidden="true">CM</div>
-            <div>
-              <strong>Chloe M.</strong>
-              <div class="google-meta">First-time pass</div>
-            </div>
-            <span class="google-badge">Google</span>
-          </div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <h3>“Super supportive”</h3>
-          <p>Helped me rebuild confidence after a fail elsewhere. Clear feedback and mock tests made the difference.</p>
-          <div class="review-footer">
-            <small>Reviewed Jul 2024</small>
-            <span class="verified">Verified learner</span>
-          </div>
-        </article>
-      </div>
+      <script defer async src="https://cdn.trustindex.io/loader.js?eccf1aa60e60010495963c36b79"></script>
     </div>
   </section>
 
