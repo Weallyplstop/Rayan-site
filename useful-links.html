@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Useful links | Rayan Automatic & Manual Driving School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #2563eb;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --bg: #f5fbff;
+      --card: #ffffff;
+      --shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Poppins', Arial, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 45%, #2563eb 100%);
+      color: #fff;
+      padding: 18px 0 28px;
+      box-shadow: var(--shadow);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+    }
+    .brand { display: flex; alignments: center; gap: 10px; font-weight: 700; }
+    .logo-mark { width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; letter-spacing: 0.8px; color: #e0f2fe; background: radial-gradient(circle at 28% 28%, rgba(255,255,255,0.3), transparent 58%), linear-gradient(135deg, #2563eb 0%, #38bdf8 65%, #a5f3fc 100%); border: 1px solid rgba(56,189,248,0.5); box-shadow: 0 12px 30px rgba(37,99,235,0.35); text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+    .nav-links a { color: #e0f2ff; padding: 8px 12px; border-radius: 10px; transition: background 0.15s ease, color 0.15s ease; }
+    .nav-links a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .dropdown { position: relative; }
+    .dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #0b1221;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      min-width: 220px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      z-index: 10;
+    }
+    .dropdown-menu a { display: block; padding: 10px 14px; color: #e2e8f0; }
+    .dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown:hover .dropdown-menu { display: block; }
+    .pill { background: rgba(255,255,255,0.18); color: #e2e8f0; padding: 9px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); font-size: 13px; }
+    .page-hero { padding: 12px 0 16px; }
+    .page-hero h1 { margin: 10px 0 6px; font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.3px; }
+    .page-hero p { margin: 0; color: #bfdbfe; max-width: 760px; }
+    .hero-photo { margin-top: 12px; border: 1px solid rgba(255,255,255,0.25); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(15,23,42,0.35); }
+    .hero-photo img { width: 100%; height: 240px; object-fit: cover; display: block; }
+    section { padding: 70px 0; }
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .link-card {
+      background: var(--card);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .link-card small { color: var(--muted); letter-spacing: 0.3px; text-transform: uppercase; font-size: 11px; }
+    .link-card h3 { margin: 0; font-size: 18px; }
+    .link-card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
+    .link-card a {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--red);
+      font-weight: 600;
+    }
+    .tips { background: #eef2ff; border-radius: 18px; padding: 24px; border: 1px solid #dbeafe; }
+    .tips h3 { margin: 0 0 10px; }
+    footer { padding: 30px 0; text-align: center; color: var(--muted); font-size: 14px; }
+    @media (max-width: 640px) { nav { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo-mark" aria-hidden="true">RDS</div>
+          <div>
+            <div>Rayan Automatic & Manual Driving School</div>
+            <small style="color:#e2e8f0;">Coventry · Automatic & manual</small>
+          </div>
+        </div>
+        <div class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <div class="dropdown">
+            <a href="courses.html" aria-haspopup="true">Courses ▾</a>
+            <div class="dropdown-menu" aria-label="Courses submenu">
+              <a href="automatic-lessons.html">Automatic driving lessons</a>
+              <a href="manual-lessons.html">Manual driving lessons</a>
+              <a href="motorway-lessons.html">Motorway driving lessons</a>
+              <a href="refresher-lessons.html">Refresher driving lessons</a>
+              <a href="new-driver-lessons.html">New & inexperienced drivers</a>
+            </div>
+          </div>
+          <a href="road-signs.html">Road signs</a>
+          <a href="useful-links.html">Useful links</a>
+          <a href="about.html">About us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+        <div class="pill">Automatic & manual · Coventry · Bedworth · Nuneaton · Warwick · Leamington</div>
+      </nav>
+      <div class="page-hero">
+        <h1>Official DVSA resources</h1>
+        <p>Save these links for quick access to theory bookings, practical test slots, practice materials, and show-me/tell-me questions.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Learner driver studying theory test resources" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="links-grid">
+          <article class="link-card">
+            <small>book tests</small>
+            <h3>Book your theory test</h3>
+            <p>Reserve a DVSA theory-test appointment, change dates, or update accessibility requirements.</p>
+            <a href="https://www.gov.uk/book-theory-test" target="_blank" rel="noopener">gov.uk/book-theory-test →</a>
+          </article>
+          <article class="link-card">
+            <small>book tests</small>
+            <h3>Book your practical test</h3>
+            <p>Secure a driving-test slot, manage your booking, or join the cancellations list.</p>
+            <a href="https://www.gov.uk/book-driving-test" target="_blank" rel="noopener">gov.uk/book-driving-test →</a>
+          </article>
+          <article class="link-card">
+            <small>practice</small>
+            <h3>Take the practice theory test</h3>
+            <p>Use the official DVSA multiple-choice mock tests to build accuracy before exam day.</p>
+            <a href="https://www.gov.uk/take-practice-theory-test" target="_blank" rel="noopener">gov.uk/take-practice-theory-test →</a>
+          </article>
+          <article class="link-card">
+            <small>prepare</small>
+            <h3>Vehicle safety questions</h3>
+            <p>Revise the “show me / tell me” questions used during the practical test—including electric, automatic, and manual variations.</p>
+            <a href="https://www.gov.uk/driving-test/vehicle-safety-questions" target="_blank" rel="noopener">gov.uk/vehicle-safety-questions →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:10px;">
+      <div class="container">
+        <div class="tips">
+          <h3>How we use these resources in lessons</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--muted);">
+            <li>Every intensive plan includes theory mock tracking—send us your multiple-choice scores so we can tackle weak topics in-car.</li>
+            <li>We’ll book motorway or night lessons around your practical date to mirror “show me / tell me” prompts.</li>
+            <li>Manual learners get extra clutch-control drills ahead of practical day, while automatic learners prep eco-driving and awareness questions.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© Rayan Automatic & Manual Driving School (RDS) · Coventry · Automatic & manual routes</div>
+  </footer>
+</body>
+</html>
