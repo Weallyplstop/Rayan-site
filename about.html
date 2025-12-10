@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Rayan Automatic & Manual Driving School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #2563eb;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --bg: #f5fbff;
+      --card: #ffffff;
+      --shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Poppins', Arial, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 45%, #2563eb 100%);
+      color: #fff;
+      padding: 18px 0 28px;
+      box-shadow: var(--shadow);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    .logo-mark {
+      width: 52px; height: 52px; border-radius: 15px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 17px; letter-spacing: 0.8px;
+      color: #e0f2fe;
+      background: radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.3), transparent 58%), linear-gradient(135deg, #2563eb 0%, #38bdf8 65%, #a5f3fc 100%);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+    .nav-links a { color: #e0f2ff; padding: 8px 12px; border-radius: 10px; transition: background 0.15s ease, color 0.15s ease; }
+    .nav-links a:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .dropdown { position: relative; }
+    .dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #0b1221;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      min-width: 220px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      z-index: 10;
+    }
+    .dropdown-menu a { display: block; padding: 10px 14px; color: #e2e8f0; }
+    .dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown:hover .dropdown-menu { display: block; }
+    .pill { background: rgba(255,255,255,0.18); color: #e2e8f0; padding: 9px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); font-size: 13px; }
+    .page-hero { padding: 12px 0 16px; }
+    .page-hero h1 { margin: 10px 0 6px; font-size: clamp(32px, 4vw, 46px); letter-spacing: -0.4px; }
+    .page-hero p { margin: 0; color: #bfdbfe; max-width: 720px; }
+    section { padding: 70px 0; }
+    .section-title { text-align: center; margin-bottom: 22px; }
+    .section-title h2 { margin: 0; font-size: 30px; letter-spacing: -0.3px; }
+    .section-title p { margin: 8px 0 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+    .story {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    .timeline { list-style: none; padding: 0; margin: 0; border-left: 3px solid #dbeafe; }
+    .timeline li {
+      padding: 0 0 18px 18px;
+      position: relative;
+      color: var(--muted);
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+      left: -6px;
+      top: 5px;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+    .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .value {
+      background: var(--card);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .value strong { display: block; margin-bottom: 6px; }
+    .cta {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease;
+    }
+    .btn-primary { background: var(--red); color: #fff; box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35); }
+    .btn-secondary { background: transparent; color: #e0f2ff; border: 1px solid rgba(224, 242, 255, 0.4); }
+    .btn:hover { transform: translateY(-1px); }
+    footer { padding: 30px 0; text-align: center; color: var(--muted); font-size: 14px; }
+    @media (max-width: 640px) { nav { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo-mark" aria-hidden="true">RDS</div>
+          <div>
+            <div>Rayan Automatic & Manual Driving School</div>
+            <small style="color:#e2e8f0;">Coventry · Automatic & manual</small>
+          </div>
+        </div>
+        <div class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <div class="dropdown">
+            <a href="courses.html" aria-haspopup="true">Courses ▾</a>
+            <div class="dropdown-menu" aria-label="Courses submenu">
+              <a href="automatic-lessons.html">Automatic driving lessons</a>
+              <a href="manual-lessons.html">Manual driving lessons</a>
+              <a href="motorway-lessons.html">Motorway driving lessons</a>
+              <a href="refresher-lessons.html">Refresher driving lessons</a>
+              <a href="new-driver-lessons.html">New & inexperienced drivers</a>
+            </div>
+          </div>
+          <a href="road-signs.html">Road signs</a>
+          <a href="useful-links.html">Useful links</a>
+          <a href="about.html">About us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+        <div class="pill">Automatic & manual · Coventry · Bedworth · Nuneaton · Warwick · Leamington</div>
+      </nav>
+      <div class="page-hero">
+        <h1>People-first tuition since 2018</h1>
+        <p>Rayan Automatic & Manual Driving School is a calm, DVSA-approved instructor service guiding Coventry learners through automatic and manual licences with patient coaching, structured plans, and total transparency.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Our promise</h2>
+          <p>Every lesson focuses on clarity, confidence, and road-ready judgement.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Calm instruction</h3>
+            <p>We coach with empathy—no raised voices, just constructive feedback, in-car demos, and bite-sized goals.</p>
+          </div>
+          <div class="card">
+            <h3>Dual-transmission mastery</h3>
+            <p>Switch seamlessly between automatic and manual tuition depending on your target licence or skill gaps.</p>
+          </div>
+          <div class="card">
+            <h3>Hyper-local knowledge</h3>
+            <p>Coventry, Bedworth, Nuneaton, Warwick, and Leamington routes mapped with real DVSA test insights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="story">
+          <div>
+            <div class="section-title" style="text-align:left;">
+              <h2>Rayan’s story</h2>
+              <p>From nervous learner to specialist instructor.</p>
+            </div>
+            <p>Rayan trained on the same local Coventry roads before qualifying as an ADI. After supporting friends through manual retests, he launched RDS to provide transparent pricing, flexible scheduling, and accessible automatic options. Today, RDS delivers 1:1 lessons, mock tests, and motorway refreshers tailored to each learner’s timeline.</p>
+          </div>
+          <ul class="timeline">
+            <li><strong>2018</strong><br />Qualified as DVSA Approved Driving Instructor and launched RDS.</li>
+            <li><strong>2020</strong><br />Added automatic vehicles and WhatsApp booking for faster communication.</li>
+            <li><strong>2022</strong><br />Expanded to Bedworth, Nuneaton, Warwick, and Leamington with flexible pick-up points.</li>
+            <li><strong>2024</strong><br />Introduced dual-transmission intensive plans and structured mock-test reports.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Values we drive by</h2>
+          <p>Guiding principles for every automatic or manual lesson.</p>
+        </div>
+        <div class="values">
+          <div class="value">
+            <strong>Safety first</strong>
+            <p>Every route builds hazard perception, spacing, speed control, and commentary driving.</p>
+          </div>
+          <div class="value">
+            <strong>Structured feedback</strong>
+            <p>Each session ends with written pointers so you know exactly what to practise next.</p>
+          </div>
+          <div class="value">
+            <strong>Transparent pricing</strong>
+            <p>No weekend surcharges or car-hire add-ons—auto & manual pricing is listed publicly.</p>
+          </div>
+          <div class="value">
+            <strong>Inclusive coaching</strong>
+            <p>Specialist support for anxious drivers, neurodivergent learners, and international licence holders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h3>Ready to meet your instructor?</h3>
+            <p>Chat with us about automatic versus manual lessons, availability, or intensive schedules. We’ll map a plan that suits your lifestyle.</p>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn btn-primary" href="https://wa.me/447882398131?text=Hi%20RDS%2C%20I%27d%20like%20to%20learn%20more%20about%20automatic%20or%20manual%20lessons" target="_blank" rel="noopener">WhatsApp RDS</a>
+            <a class="btn btn-secondary" href="mailto:rayandrive@yahoo.com">Email rayandrive@yahoo.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© Rayan Automatic & Manual Driving School (RDS) · Coventry · Automatic & manual routes</div>
+  </footer>
+</body>
+</html>
