@@ -9,13 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --red: #e3232b;
-      --dark: #0f172a;
+      --red: #f97316;
+      --dark: #1f2933;
       --muted: #6b7280;
-      --bg: #f8fafc;
+      --bg: #fff9f4;
       --card: #ffffff;
-      --accent: #0ea5e9;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --accent: #fb923c;
+      --shadow: 0 12px 24px rgba(249, 115, 22, 0.12);
     }
     * { box-sizing: border-box; }
     body {
@@ -32,7 +32,7 @@
       margin: 0 auto;
     }
     header {
-      background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #161f2e 100%);
+      background: linear-gradient(135deg, #ff6b2c 0%, #f97316 50%, #fbbf24 100%);
       color: #fff;
       position: relative;
       overflow: hidden;
@@ -72,10 +72,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(120deg, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.35)), url('assets/Rayan1.jpg');
-      background-size: 155%;
+      background-image: linear-gradient(120deg, rgba(249, 115, 22, 0.9), rgba(239, 68, 68, 0.5)), url('assets/Rayan1.jpg');
+      background-size: 165%;
       background-position: center;
-      opacity: 0.45;
+      opacity: 0.55;
       pointer-events: none;
       z-index: 0;
     }
@@ -87,12 +87,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.22);
+      color: #1f2933;
       padding: 10px 14px;
       border-radius: 999px;
       font-size: 13px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: #fff;
     }
     .nav-links {
       display: flex;
@@ -102,13 +103,13 @@
       font-size: 14px;
     }
     .nav-links a {
-      color: #e2e8f0;
+      color: #fff8f2;
       padding: 8px 12px;
       border-radius: 10px;
       transition: background 0.15s ease, color 0.15s ease;
     }
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.2);
       color: #fff;
     }
     .dropdown {
@@ -151,12 +152,13 @@
       z-index: 1;
     }
     .hero h1 {
-      font-size: clamp(30px, 4vw, 44px);
+      font-size: clamp(34px, 4.5vw, 50px);
       margin: 10px 0 12px;
       letter-spacing: -0.5px;
+      color: #fff;
     }
     .hero p {
-      color: #cbd5e1;
+      color: #fff6eb;
       margin: 0 0 20px;
     }
     .hero-actions {
@@ -181,9 +183,9 @@
       box-shadow: 0 10px 25px rgba(227, 35, 43, 0.35);
     }
     .btn-secondary {
-      background: #fff;
-      color: var(--dark);
-      border: 1px solid #e2e8f0;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
     .btn:hover { transform: translateY(-1px); }
     .hero-img { display: none; }
@@ -193,23 +195,28 @@
       gap: 16px;
       margin-top: 22px;
     }
+    .stat {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: #fff;
+    }
+    .stat span {
+      color: #fde68a;
+    }
     .address-chip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       margin-top: 18px;
-      background: rgba(15, 23, 42, 0.6);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--dark);
       padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(249, 115, 22, 0.4);
       font-size: 13px;
-    }
-    .stat {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      padding: 14px 16px;
+      font-weight: 600;
     }
     .stat strong { display: block; font-size: 22px; margin-bottom: 4px; }
     section { padding: 70px 0; }
@@ -476,7 +483,6 @@
 
       <div class="hero">
         <div>
-          <div class="pill">Automatic & driving lessons across Coventry, Bedworth, Nuneaton, Warwick & Leamington</div>
           <h1>Automatic driving confidence with RDS</h1>
           <p>Automatic coaching plus confident everyday driving skills—serving Coventry, Bedworth, Nuneaton, Warwick, and Leamington from a central base.</p>
           <div class="hero-actions">
