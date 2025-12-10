@@ -234,124 +234,6 @@
     .price { font-size: 24px; font-weight: 700; margin: 0 0 6px; color: var(--red); }
     .price-note { margin: 0; color: var(--muted); font-size: 14px; }
     .cta-stack { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .google-rating-chip {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 14px 18px;
-      box-shadow: var(--shadow);
-      max-width: 420px;
-      margin: 0 auto 18px;
-    }
-    .google-rating-chip .google-g {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: #1a73e8;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .google-rating-chip strong { display: block; font-size: 20px; }
-    .google-rating-chip span { display: block; font-size: 13px; color: var(--muted); }
-    .google-rating-chip .stars { margin-left: auto; font-size: 18px; }
-    .google-reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      margin-top: 24px;
-    }
-    .google-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .google-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(234, 179, 8, 0.12);
-      pointer-events: none;
-    }
-    .google-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
-    }
-    .avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(14, 165, 233, 0.12);
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-    }
-    .google-meta {
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .google-badge {
-      margin-left: auto;
-      background: #1a73e8;
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: 0.8px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      text-transform: uppercase;
-    }
-    .stars {
-      color: #fbbc05;
-      display: flex;
-      gap: 2px;
-      font-size: 16px;
-      margin-bottom: 6px;
-      position: relative;
-      z-index: 1;
-    }
-    .google-card h3 {
-      margin: 6px 0 8px;
-      font-size: 18px;
-      position: relative;
-      z-index: 1;
-    }
-    .google-card p {
-      margin: 0;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-    .review-footer {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-    .verified {
-      color: var(--accent);
-      font-weight: 600;
-    }
     .faq {
       display: grid;
       gap: 12px;
@@ -459,6 +341,13 @@
     </div>
   </header>
 
+  <!-- TrustIndex Reviews Widget -->
+  <section id="reviews" style="padding: 50px 0;">
+    <div class="container">
+      <script defer async src='https://cdn.trustindex.io/loader.js?eccf1aa60e60010495963c36b79'></script>
+    </div>
+  </section>
+
   <section id="about">
     <div class="container">
       <div class="section-title">
@@ -517,84 +406,6 @@
     </div>
   </section>
 
-  <section id="reviews">
-    <div class="container">
-      <div class="section-title">
-        <h2>Google reviews · Coventry</h2>
-        <p>What Rayan Automatic Driving School learners say.</p>
-      </div>
-      <div class="google-rating-chip" role="img" aria-label="4.9 out of 5 on Google">
-        <div class="google-g">G</div>
-        <div>
-          <strong>4.9 / 5</strong>
-          <span>Based on Coventry Google reviews</span>
-        </div>
-        <div class="stars" aria-hidden="true">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-      </div>
-      <div class="google-reviews">
-        <article class="google-card">
-          <div class="google-header">
-            <div class="avatar" aria-hidden="true">SA</div>
-            <div>
-              <strong>Sarah A.</strong>
-              <div class="google-meta">Local Guide · Coventry</div>
-            </div>
-            <span class="google-badge">Google</span>
-          </div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <h3>“Passed first time!”</h3>
-          <p>Rayan was patient, clear, and knew all the Coventry routes. Highly recommend for automatic learners.</p>
-          <div class="review-footer">
-            <small>Reviewed Oct 2024</small>
-            <span class="verified">Verified learner</span>
-          </div>
-        </article>
-        <article class="google-card">
-          <div class="google-header">
-            <div class="avatar" aria-hidden="true">DP</div>
-            <div>
-              <strong>Dan P.</strong>
-              <div class="google-meta">Intensive course · Coventry</div>
-            </div>
-            <span class="google-badge">Google</span>
-          </div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <h3>“Great intensive course”</h3>
-          <p>Booked an intensive week, smashed the test. Calm coaching, no hidden fees, flexible slots.</p>
-          <div class="review-footer">
-            <small>Reviewed Sep 2024</small>
-            <span class="verified">Verified program</span>
-          </div>
-        </article>
-        <article class="google-card">
-          <div class="google-header">
-            <div class="avatar" aria-hidden="true">CM</div>
-            <div>
-              <strong>Chloe M.</strong>
-              <div class="google-meta">First-time pass</div>
-            </div>
-            <span class="google-badge">Google</span>
-          </div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <h3>“Super supportive”</h3>
-          <p>Helped me rebuild confidence after a fail elsewhere. Clear feedback and mock tests made the difference.</p>
-          <div class="review-footer">
-            <small>Reviewed Jul 2024</small>
-            <span class="verified">Verified learner</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section id="gallery">
     <div class="container">
       <div class="section-title">
@@ -635,7 +446,7 @@
         </details>
         <details>
           <summary>Can I book an intensive course?</summary>
-          <p>Yes. Tap “Ask for intensive pricing” to message us on WhatsApp for a tailored plan.</p>
+          <p>Yes. Tap "Ask for intensive pricing" to message us on WhatsApp for a tailored plan.</p>
         </details>
         <details>
           <summary>Where do you teach?</summary>
@@ -675,4 +486,3 @@
   </footer>
 </body>
 </html>
-
