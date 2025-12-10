@@ -9,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --red: #f97316;
-      --dark: #1f2933;
-      --muted: #6b7280;
-      --bg: #fff9f4;
+      --red: #2563eb;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --bg: #f5fbff;
       --card: #ffffff;
-      --shadow: 0 12px 24px rgba(249, 115, 22, 0.12);
+      --shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
     }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Poppins', Arial, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
@@ -22,7 +22,7 @@
     img { max-width: 100%; display: block; }
     .container { width: min(1100px, 92vw); margin: 0 auto; }
     header {
-      background: linear-gradient(135deg, #ff6b2c 0%, #f97316 50%, #fbbf24 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #172554 45%, #2563eb 100%);
       color: #fff;
       padding: 18px 0 28px;
       box-shadow: var(--shadow);
@@ -46,15 +46,15 @@
       font-weight: 700;
       font-size: 17px;
       letter-spacing: 0.8px;
-      color: #fff;
-      background: radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.25), transparent 58%), linear-gradient(135deg, #e11d48 0%, #f97316 60%, #facc15 100%);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+      color: #e0f2fe;
+      background: radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.3), transparent 58%), linear-gradient(135deg, #2563eb 0%, #38bdf8 65%, #a5f3fc 100%);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
       text-transform: uppercase;
     }
     .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
-    .nav-links a { color: #fffef9; padding: 8px 12px; border-radius: 10px; transition: background 0.15s ease, color 0.15s ease; }
-    .nav-links a:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
+    .nav-links a { color: #e0f2ff; padding: 8px 12px; border-radius: 10px; transition: background 0.15s ease, color 0.15s ease; }
+    .nav-links a:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
     .dropdown { position: relative; }
     .dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
     .dropdown-menu {
@@ -73,7 +73,7 @@
     .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
     .dropdown:focus-within .dropdown-menu,
     .dropdown:hover .dropdown-menu { display: block; }
-    .pill { background: #fff; color: var(--dark); padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(249, 115, 22, 0.4); font-size: 13px; font-weight: 600; }
+    .pill { background: rgba(255, 255, 255, 0.18); color: #e2e8f0; padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.3); font-size: 13px; font-weight: 600; }
     .page-hero { padding: 10px 0 12px; }
     .page-hero h1 { margin: 10px 0 6px; font-size: clamp(26px, 3.6vw, 34px); letter-spacing: -0.3px; }
     .page-hero p { margin: 0; color: #cbd5e1; max-width: 700px; }
