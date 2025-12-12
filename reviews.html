@@ -1,285 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reviews | Rayan Automatic & Manual Driving School</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --red: #2563eb;
-      --dark: #0f172a;
-      --muted: #64748b;
-      --bg: #f5fbff;
-      --card: #ffffff;
-      --shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Poppins', Arial, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1100px, 92vw); margin: 0 auto; }
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #172554 45%, #2563eb 100%);
-      color: #fff;
-      padding: 18px 0 28px;
-      box-shadow: var(--shadow);
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding-bottom: 10px;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
-    .logo-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 15px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: 0.8px;
-      color: #e0f2fe;
-      background: radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.3), transparent 58%), linear-gradient(135deg, #2563eb 0%, #38bdf8 65%, #a5f3fc 100%);
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
-      text-transform: uppercase;
-    }
-    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
-    .nav-links a { color: #e0f2ff; padding: 8px 12px; border-radius: 10px; transition: background 0.15s ease, color 0.15s ease; }
-    .nav-links a:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
-    .dropdown { position: relative; }
-    .dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background: #0b1221;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      min-width: 220px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-      z-index: 10;
-    }
-    .dropdown-menu a { display: block; padding: 10px 14px; color: #e2e8f0; }
-    .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
-    .dropdown:focus-within .dropdown-menu,
-    .dropdown:hover .dropdown-menu { display: block; }
-    .pill { background: rgba(255, 255, 255, 0.18); color: #e2e8f0; padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.3); font-size: 13px; font-weight: 600; }
-    section { padding: 60px 0; }
-    .section-title { text-align: center; margin-bottom: 18px; }
-    .section-title h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 36px); letter-spacing: -0.3px; }
-    .section-title p { margin: 4px 0; color: var(--muted); }
-    .google-rating-chip, .trustindex-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 14px 18px;
-      box-shadow: var(--shadow);
-      max-width: 460px;
-      margin: 0 auto 20px;
-    }
-    .google-rating-chip .google-g {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: #1a73e8;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .google-rating-chip strong { display: block; font-size: 20px; }
-    .google-rating-chip span { display: block; font-size: 13px; color: var(--muted); }
-    .google-rating-chip .stars { margin-left: auto; font-size: 18px; }
-    .trustindex-wrapper {
-      justify-content: center;
-      padding: 10px;
-    }
-    .google-reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    .google-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .google-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(234, 179, 8, 0.12);
-      pointer-events: none;
-    }
-    .google-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
-    }
-    .avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(14, 165, 233, 0.12);
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-    }
-    .google-meta {
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .google-badge {
-      margin-left: auto;
-      background: #1a73e8;
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: 0.8px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      text-transform: uppercase;
-    }
-    .stars {
-      color: #fbbc05;
-      display: flex;
-      gap: 2px;
-      font-size: 16px;
-      margin-bottom: 6px;
-      position: relative;
-      z-index: 1;
-    }
-    .google-card h3 {
-      margin: 6px 0 8px;
-      font-size: 18px;
-      position: relative;
-      z-index: 1;
-    }
-    .google-card p {
-      margin: 0;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-    .review-footer {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-    .verified {
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 16px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: 1px solid transparent;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .btn-primary { background: var(--red); color: #fff; box-shadow: 0 10px 25px rgba(227, 35, 43, 0.35); }
-    .btn-secondary { background: #fff; color: var(--dark); border: 1px solid #e5e7eb; }
-    .btn:hover { transform: translateY(-1px); }
-    footer { padding: 30px 0; text-align: center; color: var(--muted); font-size: 14px; }
-    @media (max-width: 640px) { nav { flex-direction: column; align-items: flex-start; } }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reviews | Sweet Dreams Manchester</title>
+  <meta name="description" content="Sweet Dreams Manchester reviews — what visitors say about the desserts, coffee, matcha, and staff." />
+  <link rel="icon" href="assets/logo.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
     <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="logo-mark" aria-hidden="true">RDS</div>
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Sweet Dreams Manchester home">
+          <img class="brand-mark" src="assets/logo.svg" alt="" />
           <div>
-            <div>Rayan Automatic & Manual Driving School</div>
-            <small style="color:#e2e8f0;">Coventry · Automatic & manual</small>
+            <div class="brand-name">Sweet Dreams Manchester</div>
+            <span class="brand-sub">Desserts • Coffee • Matcha • Brunch</span>
           </div>
-        </div>
-        <div class="nav-links" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <div class="dropdown">
-            <a href="courses.html" aria-haspopup="true">Courses ▾</a>
-            <div class="dropdown-menu" aria-label="Courses submenu">
-              <a href="automatic-lessons.html">Automatic driving lessons</a>
-              <a href="manual-lessons.html">Manual driving lessons</a>
-              <a href="motorway-lessons.html">Motorway driving lessons</a>
-              <a href="refresher-lessons.html">Refresher driving lessons</a>
-              <a href="new-driver-lessons.html">New & inexperienced drivers</a>
-            </div>
-          </div>
-          <a href="road-signs.html">Road signs</a>
-          <a href="useful-links.html">Useful links</a>
-          <a href="about.html">About us</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="reviews.html">Reviews</a>
-          <a href="contact.html">Contact us</a>
-        </div>
-        <div class="pill">Automatic & manual · Coventry · Bedworth · Nuneaton · Warwick · Leamington</div>
-      </nav>
+        </a>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+        <nav id="site-nav" class="nav" data-nav data-open="false" aria-label="Primary">
+          <a data-nav-link href="index.html">Home</a>
+          <a data-nav-link href="courses.html">Menu</a>
+          <a data-nav-link href="gallery.html">Gallery</a>
+          <a data-nav-link href="reviews.html">Reviews</a>
+          <a data-nav-link href="about.html">About</a>
+          <a data-nav-link href="contact.html">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="content">
+    <section class="hero" style="padding-bottom: 18px;">
+      <div class="container">
+        <span class="badge">Reviews</span>
+        <h1>What customers are saying</h1>
+        <p>These reviews are taken from the text you provided. Add a Google Reviews widget later if you want live updates.</p>
+      </div>
+    </section>
+
     <section>
       <div class="container">
-        <div class="section-title">
-          <h1>Reviews</h1>
-          <p>Automatic & manual lessons trusted across Coventry, Bedworth, Nuneaton, Warwick & Leamington.</p>
-          <p style="color:#38bdf8;">Base address: CV15GX · City centre meet point</p>
-        </div>
-        <div class="trustindex-wrapper">
-          <div class="ti-widget" data-ti-widget-id="eccf1aa60e60010495963c36b79"></div>
-        </div>
-        <script defer async src="https://cdn.trustindex.io/loader.js?eccf1aa60e60010495963c36b79"></script>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://wa.me/447882398131?text=Hi%20RDS%2C%20I%27d%20like%20to%20book%20automatic%20or%20manual%20lessons" target="_blank" rel="noopener">Book on WhatsApp</a>
-          <a class="btn btn-secondary" href="mailto:rayandrive@yahoo.com">Email rayandrive@yahoo.com</a>
+        <div class="grid">
+          <article class="card review">
+            <div class="meta">
+              <strong>Scott Steven</strong>
+              <span class="stars" aria-label="5 star review">★★★★★</span>
+            </div>
+            <blockquote>
+              <p>“Brilliant place. Coffee is spot on & the Matcha is fantastic.</p>
+              <p>Think the owner came over to ask how everything was & was interested in what we thought of the Matcha Tiramisu.</p>
+              <p>Everything is lovely in here & they deserve to be really successful.</p>
+              <p>Saw a couple of breakfast/brunch dishes go out & they also looked superb.</p>
+              <p>Definitely going to revisit next time we are in Manchester. 10 STARS”</p>
+            </blockquote>
+            <div class="small">Mentions: Photo 1, Photo 2, Photo 3 in the review.</div>
+          </article>
+
+          <article class="card review">
+            <div class="meta">
+              <strong>Edvin Jelja</strong>
+              <span class="stars" aria-label="5 star review">★★★★★</span>
+            </div>
+            <blockquote>
+              <p>“Best sweet spot discovered last week with desserts being top notch and the staff super friendly.</p>
+              <p>It was hard to choose, so the guy has let us try few bits to make the decision easier. Which was even harder because everything tasted so good!</p>
+              <p>Definitely worth visiting, only whats missing is a possibility to indulge those flavours inside the shop. Hopefully will expand soon! Thanks”</p>
+            </blockquote>
+            <div class="small">Edvin Jelja — Local Guide · 12 reviews · 4 photos. Mentions: Video 1 and Photo 2 in the review.</div>
+          </article>
+
+          <article class="card">
+            <h3>Want more reviews on the site?</h3>
+            <p>Send over any extra review text (or a Google Reviews link) and I’ll add them in the same style.</p>
+            <div class="actions" style="margin-top: 12px;">
+              <a class="btn btn-primary" href="contact.html">Contact us</a>
+              <a class="btn btn-secondary" href="gallery.html">See gallery</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">© Rayan Automatic & Manual Driving School (RDS) · Coventry · Automatic & manual routes</div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color: var(--text);">Sweet Dreams Manchester</strong>
+          <div>Manchester, UK</div>
+          <div class="help">© <span data-year></span> Sweet Dreams Manchester</div>
+        </div>
+        <div>
+          <div class="footer-links" aria-label="Footer links">
+            <a href="courses.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script src="assets/script.js" defer></script>
 </body>
 </html>
-

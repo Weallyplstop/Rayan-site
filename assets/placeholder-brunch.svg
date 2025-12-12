@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7fb"/>
+      <stop offset="1" stop-color="#fefce8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="260" cy="190" r="190" fill="#f59e0b" fill-opacity=".12"/>
+  <circle cx="980" cy="180" r="240" fill="#ec4899" fill-opacity=".12"/>
+  <rect x="300" y="230" width="600" height="420" rx="46" fill="#ffffff" fill-opacity=".86" stroke="#000" stroke-opacity=".06"/>
+  <path d="M420 510c0-70 55-120 120-120h120c65 0 120 50 120 120" fill="none" stroke="url(#accent)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M420 540h360" stroke="#3b1f14" stroke-opacity=".18" stroke-width="18" stroke-linecap="round"/>
+  <text x="600" y="345" text-anchor="middle" font-family="ui-sans-serif, system-ui" font-weight="900" font-size="48" fill="#1f2430">Brunch looks superb</text>
+  <text x="600" y="395" text-anchor="middle" font-family="ui-sans-serif, system-ui" font-weight="650" font-size="22" fill="#5a6476">Breakfast & brunch dishes available</text>
+</svg>
