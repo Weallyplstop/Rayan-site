@@ -1,718 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rayan Automatic & Manual Driving School | RDS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --red: #2563eb;
-      --dark: #0f172a;
-      --muted: #64748b;
-      --bg: #f5fbff;
-      --card: #ffffff;
-      --accent: #38bdf8;
-      --shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      color: var(--dark);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    .container {
-      width: min(1100px, 92vw);
-      margin: 0 auto;
-    }
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #172554 45%, #2563eb 100%);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0 10px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-    }
-    .logo-mark {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 1px;
-      color: #e0f2fe;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 60%), linear-gradient(135deg, #2563eb 0%, #38bdf8 60%, #a5f3fc 100%);
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
-      text-transform: uppercase;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(120deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.55)), url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1600&q=80');
-      background-size: 160%;
-      background-position: center;
-      opacity: 0.5;
-      pointer-events: none;
-      z-index: 0;
-    }
-    header .container {
-      position: relative;
-      z-index: 1;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.2);
-      color: #e2e8f0;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-    .nav-links a {
-      color: #e0f2ff;
-      padding: 8px 12px;
-      border-radius: 10px;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown > a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background: #0b1221;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      min-width: 220px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-      z-index: 10;
-    }
-    .dropdown-menu a {
-      display: block;
-      padding: 10px 14px;
-      color: #e2e8f0;
-    }
-    .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
-    .dropdown:focus-within .dropdown-menu,
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-    .hero {
-      padding: 30px 0 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: clamp(34px, 4.5vw, 50px);
-      margin: 10px 0 12px;
-      letter-spacing: -0.5px;
-      color: #fff;
-    }
-    .hero p {
-      color: #e0f2ff;
-      margin: 0 0 20px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      border: 1px solid transparent;
-    }
-    .btn-primary {
-      background: var(--red);
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(227, 35, 43, 0.35);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: #e0f2ff;
-      border: 1px solid rgba(224, 242, 255, 0.5);
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .hero-img {
-      display: block;
-      background: rgba(15, 23, 42, 0.35);
-      border-radius: 20px;
-      padding: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 25px 45px rgba(15, 23, 42, 0.35);
-    }
-    .hero-img img {
-      width: 100%;
-      border-radius: 14px;
-      object-fit: cover;
-      height: 100%;
-      min-height: 280px;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 22px;
-    }
-    .stat {
-      background: rgba(15, 23, 42, 0.35);
-      border: 1px solid rgba(224, 242, 255, 0.2);
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: #fff;
-    }
-    .stat span {
-      color: #bae6fd;
-    }
-    .address-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      background: rgba(15, 23, 42, 0.65);
-      color: #e0f2ff;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .stat strong { display: block; font-size: 22px; margin-bottom: 4px; }
-    section { padding: 70px 0; }
-    .section-title {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .section-title h2 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: -0.3px;
-    }
-    .section-title p {
-      color: var(--muted);
-      margin: 8px 0 0;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid #e5e7eb;
-    }
-    .card h3 { margin: 0 0 8px; }
-    .card p { margin: 0; color: var(--muted); }
-    .about-photos {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-    .about-photos img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      height: 180px;
-      border: 1px solid #e5e7eb;
-      box-shadow: var(--shadow);
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .price-card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 18px;
-      border: 1px solid #e5e7eb;
-      box-shadow: var(--shadow);
-    }
-    .price-card h4 { margin: 0 0 6px; font-size: 18px; }
-    .price { font-size: 24px; font-weight: 700; margin: 0 0 6px; color: var(--red); }
-    .price-note { margin: 0; color: var(--muted); font-size: 14px; }
-    .price-duo {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin: 8px 0;
-    }
-    .price-auto { color: var(--red); font-size: 22px; }
-    .price-manual { color: var(--accent); font-size: 20px; font-weight: 600; }
-    .cta-stack { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .google-rating-chip, .trustindex-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 14px 18px;
-      box-shadow: var(--shadow);
-      max-width: 420px;
-      margin: 0 auto 18px;
-    }
-    .google-rating-chip .google-g {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: #1a73e8;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .google-rating-chip strong { display: block; font-size: 20px; }
-    .google-rating-chip span { display: block; font-size: 13px; color: var(--muted); }
-    .google-rating-chip .stars { margin-left: auto; font-size: 18px; }
-    .trustindex-wrapper {
-      justify-content: center;
-      padding: 10px;
-    }
-    .google-reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      margin-top: 24px;
-    }
-    .google-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .google-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(234, 179, 8, 0.12);
-      pointer-events: none;
-    }
-    .google-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
-    }
-    .avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(14, 165, 233, 0.12);
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-    }
-    .google-meta {
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .google-badge {
-      margin-left: auto;
-      background: #1a73e8;
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: 0.8px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      text-transform: uppercase;
-    }
-    .stars {
-      color: #fbbc05;
-      display: flex;
-      gap: 2px;
-      font-size: 16px;
-      margin-bottom: 6px;
-      position: relative;
-      z-index: 1;
-    }
-    .google-card h3 {
-      margin: 6px 0 8px;
-      font-size: 18px;
-      position: relative;
-      z-index: 1;
-    }
-    .google-card p {
-      margin: 0;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-    .review-footer {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-    .verified {
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .faq {
-      display: grid;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    details {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
-    }
-    summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--dark);
-    }
-    details p { margin: 10px 0 0; color: var(--muted); }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-    }
-    .gallery figure {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      margin: 0;
-    }
-    .gallery figcaption {
-      padding: 10px 12px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .contact {
-      background: #0f172a;
-      color: #fff;
-      border-radius: 18px;
-      padding: 26px 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-    .contact p { margin: 6px 0 0; color: #cbd5e1; }
-    .coverage {
-      margin-top: 10px;
-      color: #f8fafc;
-      font-weight: 500;
-    }
-    .coverage span {
-      display: inline-block;
-      margin-right: 6px;
-    }
-    footer { padding: 30px 0; color: var(--muted); text-align: center; font-size: 14px; }
-    @media (max-width: 640px) {
-      nav { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .hero-actions .btn { width: 100%; justify-content: center; }
-      .cta-stack .btn { flex: 1 1 100%; }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Dreams Manchester | Desserts, Coffee & Matcha</title>
+  <meta name="description" content="Sweet Dreams Manchester dessert shop — desserts, coffee, matcha, and brunch in Manchester." />
+  <link rel="icon" href="assets/logo.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="logo-mark" aria-hidden="true">RDS</div>
-          <div>
-            <div>Rayan Automatic & Manual Driving School</div>
-            <small style="color:#e2e8f0;">Coventry · Automatic & manual</small>
-          </div>
-        </div>
-        <div class="nav-links" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <div class="dropdown">
-            <a href="courses.html" aria-haspopup="true">Courses ▾</a>
-            <div class="dropdown-menu" aria-label="Courses submenu">
-              <a href="automatic-lessons.html">Automatic driving lessons</a>
-              <a href="manual-lessons.html">Manual driving lessons</a>
-              <a href="motorway-lessons.html">Motorway driving lessons</a>
-              <a href="refresher-lessons.html">Refresher driving lessons</a>
-              <a href="new-driver-lessons.html">New & inexperienced drivers</a>
-            </div>
-          </div>
-          <a href="road-signs.html">Road signs</a>
-          <a href="useful-links.html">Useful links</a>
-          <a href="about.html">About us</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="reviews.html">Reviews</a>
-          <a href="contact.html">Contact us</a>
-        </div>
-        <div class="pill">Automatic & manual · Coventry · Bedworth · Nuneaton · Warwick · Leamington</div>
-      </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-      <div class="hero">
-        <div>
-          <h1>Automatic & manual driving confidence with RDS</h1>
-          <p>Automatic or manual coaching for confident everyday driving—serving Coventry, Bedworth, Nuneaton, Warwick, and Leamington from a central CV15GX base.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/447882398131?text=Hi%20Rayan%20Driving%20School%2C%20I%27d%20like%20to%20book%20automatic%20or%20manual%20lessons" target="_blank" rel="noopener">Book on WhatsApp</a>
-            <a class="btn btn-secondary" href="mailto:rayandrive@yahoo.com">Email rayandrive@yahoo.com</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Sweet Dreams Manchester home">
+          <img class="brand-mark" src="assets/logo.svg" alt="" />
+          <div>
+            <div class="brand-name">Sweet Dreams Manchester</div>
+            <span class="brand-sub">Desserts • Coffee • Matcha • Brunch</span>
           </div>
-          <div class="stats">
-            <div class="stat"><strong>5+ yrs</strong><span>Automatic & manual instruction</span></div>
-            <div class="stat"><strong>100+</strong><span>Students passed</span></div>
-            <div class="stat"><strong>98%</strong><span>First‑time pass rate</span></div>
-          </div>
-          <div class="address-chip">Address · CV15GX · City-centre meet point</div>
-        </div>
-        <div class="hero-img">
-          <img src="https://images.unsplash.com/photo-1529429617124-aee711a70412?auto=format&fit=crop&w=1200&q=80" alt="Instructor car ready for automatic and manual lessons" />
-        </div>
+        </a>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+        <nav id="site-nav" class="nav" data-nav data-open="false" aria-label="Primary">
+          <a data-nav-link href="index.html">Home</a>
+          <a data-nav-link href="courses.html">Menu</a>
+          <a data-nav-link href="gallery.html">Gallery</a>
+          <a data-nav-link href="reviews.html">Reviews</a>
+          <a data-nav-link href="about.html">About</a>
+          <a data-nav-link href="contact.html">Contact</a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <section id="reviews">
-    <div class="container">
-      <div class="section-title">
-        <h2>Google reviews · Coventry</h2>
-        <p>What Rayan Automatic & Manual Driving School learners say.</p>
-      </div>
-      <div class="trustindex-wrapper">
-        <div class="ti-widget" data-ti-widget-id="eccf1aa60e60010495963c36b79"></div>
-      </div>
-      <script defer async src="https://cdn.trustindex.io/loader.js?eccf1aa60e60010495963c36b79"></script>
-    </div>
-  </section>
+  <main id="content">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="badge">A brilliant dessert spot in Manchester</span>
+            <h1>Sweet Dreams for dessert lovers (and coffee people).</h1>
+            <p>Coffee that’s <strong>spot on</strong>, matcha that’s <strong>fantastic</strong>, and desserts that keep people coming back — including a customer-favourite <strong>Matcha Tiramisu</strong>.</p>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>Why Rayan Automatic & Manual Driving School</h2>
-        <p>Automatic and manual specialists sharpening everyday driving confidence across Midlands routes.</p>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <h3>Automatic focus</h3>
-          <p>Learn faster with modern automatic cars—no clutch stress, just safe everyday driving.</p>
-        </div>
-        <div class="card">
-          <h3>Manual mastery</h3>
-          <p>Clutch control, gear changes, and hill starts designed for learners choosing manual licences.</p>
-        </div>
-        <div class="card">
-          <h3>Local expertise</h3>
-          <p>Coventry routes, mock tests, and DVSA standards to get you test-ready in auto or manual.</p>
-        </div>
-      </div>
-      <div class="about-photos">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Automatic lesson in progress" />
-        <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80" alt="Manual learner celebrating pass" />
-        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80" alt="Driving instructor supporting learner" />
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing">
-    <div class="container">
-      <div class="section-title">
-        <h2>Pricing (Automatic & Manual)</h2>
-        <p>Transparent rates for both transmissions. No hidden fees.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h4>Standard lesson</h4>
-          <div class="price-duo">
-            <div class="price price-auto">Auto £37 / hour</div>
-            <div class="price price-manual">Manual £35 / hour</div>
+            <div class="actions">
+              <a class="btn btn-primary" href="courses.html">View menu</a>
+              <a class="btn btn-secondary" href="reviews.html">Read reviews</a>
+              <a class="btn btn-ghost" href="contact.html">Find us</a>
+            </div>
           </div>
-          <p class="price-note">Pay as you go. Dual-controlled auto or manual car included.</p>
-        </div>
-        <div class="price-card">
-          <h4>2-hour lesson</h4>
-          <div class="price-duo">
-            <div class="price price-auto">Auto £70</div>
-            <div class="price price-manual">Manual £65</div>
-          </div>
-          <p class="price-note">Ideal for focused practice sessions or mixed-transmission coaching.</p>
-        </div>
-        <div class="price-card">
-          <h4>10-hour package</h4>
-          <div class="price-duo">
-            <div class="price price-auto">Auto £330</div>
-            <div class="price price-manual">Manual £320</div>
-          </div>
-          <p class="price-note">Build strong fundamentals efficiently with bundled savings.</p>
-        </div>
-        <div class="price-card">
-          <h4>20-hour package</h4>
-          <div class="price-duo">
-            <div class="price price-auto">Auto £640</div>
-            <div class="price price-manual">Manual £620</div>
-          </div>
-          <p class="price-note">Great for beginners aiming for test-ready confidence.</p>
-        </div>
-      </div>
-      <div class="cta-stack">
-        <a class="btn btn-primary" href="https://wa.me/447882398131?text=Hi%20RDS%2C%20I%27d%20like%20to%20book%20automatic%20or%20manual%20lessons" target="_blank" rel="noopener">Book on WhatsApp</a>
-        <a class="btn btn-secondary" href="https://wa.me/447882398131?text=Hi%20RDS%2C%20please%20share%20automatic%20and%20manual%20intensive%20course%20prices" target="_blank" rel="noopener">Ask for intensive pricing</a>
-      </div>
-    </div>
-  </section>
 
-  <section id="gallery">
-    <div class="container">
-      <div class="section-title">
-        <h2>Recent passes</h2>
-        <p>Real students, real results—100+ passes and counting.</p>
+          <div class="hero-card" aria-label="Desserts preview">
+            <img src="assets/hero-dessert.svg" alt="Sweet Dreams Manchester desserts and drinks" />
+            <div class="hero-card-body">
+              <div class="hero-kpis" role="list">
+                <div class="kpi" role="listitem"><strong>Matcha</strong><span>fantastic</span></div>
+                <div class="kpi" role="listitem"><strong>Coffee</strong><span>spot on</span></div>
+                <div class="kpi" role="listitem"><strong>10 stars</strong><span>from visitors</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="gallery">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a0b?auto=format&fit=crop&w=900&q=80" alt="Learner holding pass certificate" />
-          <figcaption>First-time pass · Automatic</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1529429617124-aee711a70412?auto=format&fit=crop&w=900&q=80" alt="Instructor car with dual controls" />
-          <figcaption>Confident and test-ready</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80" alt="Learner practising parking manoeuvre" />
-          <figcaption>Test day success</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Car ready for lessons" />
-          <figcaption>Another happy driver</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="faq">
-    <div class="container">
-      <div class="section-title">
-        <h2>FAQs</h2>
-        <p>Quick answers inspired by real lesson FAQs.</p>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Do you teach automatic and manual?</summary>
-          <p>Yes. Choose automatic for clutch-free lessons or manual for full licence flexibility—same calm coaching.</p>
-        </details>
-        <details>
-          <summary>Can I book an intensive course?</summary>
-          <p>Yes. Tap “Ask for intensive pricing” to message us on WhatsApp for a tailored plan.</p>
-        </details>
-        <details>
-          <summary>Where do you teach?</summary>
-          <p>Coventry and nearby test routes. We focus on local DVSA test centers.</p>
-        </details>
-        <details>
-          <summary>How do I book?</summary>
-          <p>Hit the WhatsApp button to confirm your slot. No hidden fees.</p>
-        </details>
-        <details>
-          <summary>Do you offer mock tests?</summary>
-          <p>Yes. We run mock tests so you know exactly what to expect on test day.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>What to try</h2>
+            <p>Popular picks inspired by real customer reviews (and what dessert shops do best).</p>
+          </div>
+        </div>
 
-  <section id="contact">
+        <div class="grid">
+          <article class="card">
+            <h3>Matcha Tiramisu</h3>
+            <p>A standout dessert people talk about — especially if you’re into matcha.</p>
+          </article>
+          <article class="card">
+            <h3>Coffee + Matcha drinks</h3>
+            <p>Espresso classics, iced drinks, and matcha options that actually taste right.</p>
+          </article>
+          <article class="card">
+            <h3>Breakfast & brunch</h3>
+            <p>Visitors have spotted brunch dishes going out — and they looked superb.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Reviews</h2>
+            <p>Two recent highlights (full reviews on the Reviews page).</p>
+          </div>
+          <div>
+            <a class="btn btn-secondary" href="reviews.html">See all</a>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card review">
+            <div class="meta">
+              <strong>Scott Steven</strong>
+              <span class="stars" aria-label="5 star review">★★★★★</span>
+            </div>
+            <blockquote>
+              <p>“Coffee is spot on & the Matcha is fantastic… Everything is lovely in here & they deserve to be really successful.”</p>
+            </blockquote>
+            <div class="small">Mentions 3 photos in the review.</div>
+          </article>
+
+          <article class="card review">
+            <div class="meta">
+              <strong>Edvin Jelja</strong>
+              <span class="stars" aria-label="5 star review">★★★★★</span>
+            </div>
+            <blockquote>
+              <p>“Best sweet spot… desserts top notch and the staff super friendly… everything tasted so good!”</p>
+            </blockquote>
+            <div class="small">Mentions a review video.</div>
+          </article>
+
+          <article class="card review">
+            <div class="meta">
+              <strong>Why people love it</strong>
+              <span class="stars" aria-hidden="true">★★★★★</span>
+            </div>
+            <blockquote>
+              <p>Friendly staff, generous tastings, and a place that feels worth revisiting every time you’re in Manchester.</p>
+            </blockquote>
+            <div class="small">Come for dessert, stay for the vibe.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Gallery preview</h2>
+            <p>Swap the placeholders with your real photos when ready.</p>
+          </div>
+          <div>
+            <a class="btn btn-secondary" href="gallery.html">Open gallery</a>
+          </div>
+        </div>
+
+        <div class="media">
+          <div class="media-item">
+            <figure class="figure">
+              <img src="assets/placeholder-matcha.svg" alt="Matcha tiramisu placeholder image" />
+              <figcaption>Matcha Tiramisu</figcaption>
+            </figure>
+          </div>
+          <div class="media-item">
+            <figure class="figure">
+              <img src="assets/placeholder-coffee.svg" alt="Coffee placeholder image" />
+              <figcaption>Coffee & matcha drinks</figcaption>
+            </figure>
+          </div>
+          <div class="media-item">
+            <figure class="figure">
+              <img src="assets/placeholder-brunch.svg" alt="Brunch placeholder image" />
+              <figcaption>Breakfast & brunch</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container">
-      <div class="contact">
+      <div class="footer-grid">
         <div>
-          <h3>Ready to start?</h3>
-          <p>Automatic lessons, intensive options, and fast-track prep.</p>
-          <div class="coverage">
-            <span>Coventry</span>·<span>Bedworth</span>·<span>Nuneaton</span>·<span>Warwick</span>·<span>Leamington</span>
-            <br />
-            <small style="color:#38bdf8;">Address: CV15GX</small>
+          <strong style="color: var(--text);">Sweet Dreams Manchester</strong>
+          <div>Manchester, UK</div>
+          <div class="help">For exact address / hours, update the Contact page.</div>
+          <div class="help">© <span data-year></span> Sweet Dreams Manchester</div>
+        </div>
+        <div>
+          <div class="footer-links" aria-label="Footer links">
+            <a href="courses.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
-        <div class="hero-actions" style="gap:10px;">
-          <a class="btn btn-primary" href="https://wa.me/447882398131?text=Hi%20RDS%2C%20I%27d%20like%20to%20book%20automatic%20or%20manual%20lessons" target="_blank" rel="noopener">WhatsApp booking</a>
-          <a class="btn btn-secondary" href="mailto:rayandrive@yahoo.com">rayandrive@yahoo.com</a>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      © Rayan Automatic & Manual Driving School (RDS) · Coventry · Automatic & manual routes
     </div>
   </footer>
+
+  <script src="assets/script.js" defer></script>
 </body>
 </html>
-

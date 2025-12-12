@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Sweet Dreams Manchester">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".25"/>
+    </linearGradient>
+  </defs>
+  <rect x="14" y="14" width="132" height="132" rx="36" fill="url(#g)"/>
+  <path d="M45 70c0-16 14-29 31-29s31 13 31 29c0 11-7 20-16 25v12c0 8-7 15-15 15H76c-8 0-15-7-15-15V95C52 90 45 81 45 70Z" fill="url(#g2)"/>
+  <path d="M58 70c0-9 8-16 18-16s18 7 18 16" fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 118h36" stroke="#3b1f14" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="110" cy="54" r="8" fill="#10b981" fill-opacity=".85"/>
+</svg>
